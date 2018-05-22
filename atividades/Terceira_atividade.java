@@ -21,6 +21,5 @@ public class Terceira_atividade {
 		nome = nome.replaceAll("\\B\\w\\s*", "").toUpperCase();
 				
 		System.out.println(nome);
-
 	}
 }

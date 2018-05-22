@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Segunda_atividade {    
     private static Scanner entrada;
 
-	public static void main(String []args)
+    public static void main(String []args)
     {
         int numero;
         
         entrada = new Scanner(System.in);
         
-        System.out.print("Entre com um número: ");        
+        System.out.print("Entre com um nÃºmero: ");        
         numero = entrada.nextInt();
         
         String numeroString = Integer.toString(numero);
@@ -30,7 +30,7 @@ public class Segunda_atividade {
                     System.out.println("dois ");
                     break;
                 case '3':
-                    System.out.println("três ");
+                    System.out.println("trÃªs ");
                     break;
                 case '4':
                     System.out.println("quatro ");

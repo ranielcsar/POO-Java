@@ -21,7 +21,7 @@ public class Account {
    
    public double getBalance() { return balance; }
    
-   public void setName(String nome){ this.name = nome; }
+   public void setName(String nome) { this.name = nome; }
    
    public String getName() { return name; }   
 }

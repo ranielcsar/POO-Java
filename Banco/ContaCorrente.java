@@ -1,8 +1,8 @@
 public class ContaCorrente extends Conta {
    private int saqueMensal;
-   private int extratoMensal;
-   private double limiteAtual;
+   private int extratoMensal;   
    private double limiteInicial;
+   private double limiteAtual;
    
    public ContaCorrente(int conta, String agencia, String titular, String senha, double saldo)
    {

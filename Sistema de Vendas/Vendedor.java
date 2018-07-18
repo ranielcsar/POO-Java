@@ -1,3 +1,5 @@
+package Sistema_deVendas;
+
 public class Vendedor {
    private int codigo;
    private String nome;
@@ -16,15 +18,11 @@ public class Vendedor {
 
    public String getNome() { return nome; }
 
-   public void setNome(String nome) { this.nome = nome; }
-
-   public String getEndereco() { return endereco; }
-
-   public void setEndereco(String endereco) { this.endereco = endereco; }
+   public void setNome(String nome) { this.nome = nome; } 
    
-   public Venda vender(int codigo, String situacao, String data, Cliente cliente, Vendedor vendedor, String formaPagamento)
+   public Venda vender(int codigo, String data, Cliente cliente, Vendedor vendedor, String formaPagamento, String situacao)
    {
-      return new Venda(codigo, situacao, data, cliente, vendedor, formaPagamento);
+      return new Venda(codigo, data, cliente, vendedor, formaPagamento, situacao);
    }
    
    public String cancelarVenda(Venda venda)
@@ -42,10 +40,11 @@ public class Vendedor {
    
    public Cliente cadastrarCliente(int codigo, String nome, String endereco)
    {
-      return new Cliente(codigo, nome, endereco);
+      System.out.println("Cliente cadastrado!");
+      return new Cliente(codigo, nome, endereco);      
    }
    
-   public ItensVenda incluirVenda(int codigo, Produto produto, int quantidade, Venda venda)
+   public ItensVenda incluirItem(int codigo, Produto produto, int quantidade, Venda venda)
    {
       double valorUnidade = produto.getValorUnidade();
       double subTotal = valorUnidade * quantidade;
@@ -61,7 +60,7 @@ public class Vendedor {
       return item;
    }
    
-   public ItensVenda incluirVenda(int codigo, Produto produto, int quantidade, double descontoPorcentagem, Venda venda)
+   public ItensVenda incluirItem(int codigo, Produto produto, int quantidade, double descontoPorcentagem, Venda venda)
    {
       double valorUnidade = produto.getValorUnidade();
       double subTotal = valorUnidade * quantidade;
@@ -77,6 +76,30 @@ public class Vendedor {
       item.setVenda(venda);
       
       return item;
+   }
+   
+   public void mostrarVenda(ItensVenda[] itens, Venda venda)
+   {
+      Cliente cliente = venda.getCliente();
+      Vendedor vendedor = venda.getVendedor();     
+      
+      System.out.println("--------- VENDAS ---------");
+      System.out.println("Código da venda: "+ venda.getCodigoVenda() +"\nSituação: "+ venda.getSituacao() +"\nData da venda: "+ venda.getDataVenda() +
+                "\nNome do Cliente: "+ cliente.getNome() +"\nVendedor: "+ vendedor.getNome() +"\nForma de pagamento: "+ 
+                venda.getFormaPagamento());
+      System.out.println("--------------------------------------");
+      
+      System.out.println("Itens da Venda: ");
+      
+      for (ItensVenda item : itens)
+      {
+         if (item.getVenda() == venda)
+         {
+            System.out.println("Código do item: "+ item.getCodigoItem() + "; Desconto: "+ item.getDesconto() +
+                 " Nome do produto: " + item.getProduto().getNome() + "; Quantidade: "+ item.getQuantidadeItens() +
+                 "; Subtotal: R$ "+ item.getSubtotal() + "\n");
+         }         
+      }
    }
    
    public String fecharVenda(Venda venda)

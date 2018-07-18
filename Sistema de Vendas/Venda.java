@@ -1,3 +1,5 @@
+package Sistema_deVendas;
+
 public class Venda {
     private int codigoVenda;
     private String situacao;
@@ -6,7 +8,7 @@ public class Venda {
     private Vendedor vendedor;
     private String formaPagamento;
 
-    public Venda(int codigoVenda, String situacao, String dataVenda, Cliente cliente, Vendedor vendedor, String formaPagamento)
+    public Venda(int codigoVenda, String dataVenda, Cliente cliente, Vendedor vendedor, String formaPagamento, String situacao)
     {
         this.codigoVenda = codigoVenda;
         this.situacao = situacao;

@@ -1,3 +1,5 @@
+package Sistema_deVendas;
+
 public class Produto {
     private int codigoProduto;
     private int quantidadeProduto;

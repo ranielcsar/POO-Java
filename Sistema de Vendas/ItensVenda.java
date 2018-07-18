@@ -1,3 +1,5 @@
+package Sistema_deVendas;
+
 public class ItensVenda {
     private int codigoItem;
     private double desconto;

@@ -2,7 +2,7 @@ package Sistema_deVendas;
 
 public class ItensVenda {
     private int codigoItem;
-    private double desconto;
+    private int desconto;
     private Produto produto;
     private int quantidadeItens;
     private double subtotal;
@@ -12,9 +12,9 @@ public class ItensVenda {
 
    public void setCodigoItem(int codigoItem) { this.codigoItem = codigoItem; }
    
-   public double getDesconto() { return desconto; }
+   public int getDesconto() { return desconto; }
    
-   public void setDesconto(double desconto) { this.desconto = desconto; }
+   public void setDesconto(int desconto) { this.desconto = desconto; }
    
    public Produto getProduto() { return produto; }
    

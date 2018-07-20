@@ -1,15 +1,16 @@
 package Sistema_deVendas;
 
-public class Vendedor {
+public class Vendedor {  
    private int codigo;
    private String nome;
    private String endereco;
+   public Calculos calculo = new Calculos();
 
    public Vendedor(int codigo, String nome, String endereco)
    {
       this.codigo = codigo;
       this.nome = nome;
-      this.endereco = endereco;
+      this.endereco = endereco;      
    }
 
    public int getcodigo() { return codigo; }
@@ -60,7 +61,7 @@ public class Vendedor {
       return item;
    }
    
-   public ItensVenda incluirItem(int codigo, Produto produto, int quantidade, double descontoPorcentagem, Venda venda)
+   public ItensVenda incluirItem(int codigo, Produto produto, int quantidade, int descontoPorcentagem, Venda venda)
    {
       double valorUnidade = produto.getValorUnidade();
       double subTotal = valorUnidade * quantidade;
@@ -72,6 +73,7 @@ public class Vendedor {
       item.setCodigoItem(codigo);
       item.setProduto(produto);
       item.setQuantidadeItens(quantidade);
+      item.setDesconto(descontoPorcentagem);
       item.setSubtotal(subTotal);
       item.setVenda(venda);
       
@@ -83,23 +85,49 @@ public class Vendedor {
       Cliente cliente = venda.getCliente();
       Vendedor vendedor = venda.getVendedor();     
       
-      System.out.println("--------- VENDAS ---------");
-      System.out.println("Código da venda: "+ venda.getCodigoVenda() +"\nSituação: "+ venda.getSituacao() +"\nData da venda: "+ venda.getDataVenda() +
-                "\nNome do Cliente: "+ cliente.getNome() +"\nVendedor: "+ vendedor.getNome() +"\nForma de pagamento: "+ 
+      System.out.println("---------- VENDA ----------");
+      System.out.println("Código da venda: "+ venda.getCodigoVenda() + "\nSituação: " + venda.getSituacao() + "\nData da venda: " + venda.getDataVenda() +
+                "\nNome do Cliente: " + cliente.getNome() + "\nVendedor: " + vendedor.getNome() + "\nForma de pagamento: " + 
                 venda.getFormaPagamento());
-      System.out.println("--------------------------------------");
+      System.out.println("-------------------------------------- \n");
       
-      System.out.println("Itens da Venda: ");
+      System.out.println("ITENS DA VENDA: \n");
+      
+      double valorTotal = 0;
       
       for (ItensVenda item : itens)
-      {
-         if (item.getVenda() == venda)
+      {  
+         if (item != null)
          {
-            System.out.println("Código do item: "+ item.getCodigoItem() + "; Desconto: "+ item.getDesconto() +
-                 " Nome do produto: " + item.getProduto().getNome() + "; Quantidade: "+ item.getQuantidadeItens() +
-                 "; Subtotal: R$ "+ item.getSubtotal() + "\n");
+            if (item.getVenda() == venda)
+            {
+               System.out.println("Código do item: " + item.getCodigoItem() + "; Desconto: " + item.getDesconto() +
+                    "%; Nome do produto: " + item.getProduto().getNome() + "; Quantidade: " + item.getQuantidadeItens() +
+                    "; Subtotal: R$ "+ item.getSubtotal() + "\n");
+               
+               valorTotal += item.getSubtotal();
+            }
          }         
       }
+      
+      System.out.println("--------------------------------------");
+      System.out.println("Valor total da venda: R$ " + valorTotal);
+      System.out.println("-------------------------------------- \n");
+   }
+   
+   public void mostrarFaturamentos(Venda[] vendas, ItensVenda[] itens)
+   {
+      System.out.println("---------- FATURAMENTOS ----------");
+      
+      for (Venda venda : vendas)
+      {
+         if (venda != null)
+         {
+            System.out.println("Faturamento da data " + venda.getDataVenda() + ": R$ " + calculo.faturamentoData(venda, itens) + ".");
+         }
+      }
+      System.out.println("--------------------------------------");
+      calculo.setFaturamentoTotal(itens);
    }
    
    public String fecharVenda(Venda venda)

@@ -39,6 +39,6 @@ public class Tela {
          
          vendedores[1].mostrarVenda(itemVenda, vendas[1]);
          
-         System.out.println("Faturamento TOTAL: " + calculo.getFaturamentoTotal());
+         calculo.mostrarFaturamentos(vendas, itemVenda);         
    }   
 }

@@ -4,15 +4,7 @@ public class Calculos {
    private double subtotal;
    private double faturamento;
    
-   void setValorTotal(double valor) { this.subtotal += valor; } 
-   
-   void setFaturamentoTotal(ItensVenda[] itens)
-   {
-      for (ItensVenda item : itens)
-      {
-         this.faturamento += item.getSubtotal();
-      }
-   }
+   void setValorTotal(double valor) { this.subtotal += valor; }   
    
    public double getFaturamentoTotal() { return faturamento; }
    
@@ -34,5 +26,21 @@ public class Calculos {
       }     
      
       return total;
+   }
+   
+   public void mostrarFaturamentos(Venda[] vendas, ItensVenda[] itens)
+   {
+      System.out.println("---------- FATURAMENTOS ----------");
+      
+      for (Venda venda : vendas)
+      {
+         if (venda != null)
+         {
+            System.out.println("Faturamento da data " + venda.getDataVenda() + ": R$ " + this.faturamentoData(venda, itens) + ".");
+            faturamento += this.faturamentoData(venda, itens);
+         }
+      }      
+      System.out.println("Faturamento TOTAL: R$ " + this.getFaturamentoTotal());
+      System.out.println("--------------------------------------");      
    }
 }

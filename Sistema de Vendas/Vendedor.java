@@ -113,22 +113,7 @@ public class Vendedor {
       System.out.println("--------------------------------------");
       System.out.println("Valor total da venda: R$ " + valorTotal);
       System.out.println("-------------------------------------- \n");
-   }
-   
-   public void mostrarFaturamentos(Venda[] vendas, ItensVenda[] itens)
-   {
-      System.out.println("---------- FATURAMENTOS ----------");
-      
-      for (Venda venda : vendas)
-      {
-         if (venda != null)
-         {
-            System.out.println("Faturamento da data " + venda.getDataVenda() + ": R$ " + calculo.faturamentoData(venda, itens) + ".");
-         }
-      }
-      System.out.println("--------------------------------------");
-      calculo.setFaturamentoTotal(itens);
-   }
+   } 
    
    public String fecharVenda(Venda venda)
    {

@@ -23,7 +23,7 @@ public class Exemplo1 {
       
       System.out.println("Lista atualizada: " + nomes);
       
-      nomes.clear(); // passa a vassoura na lista
+      nomes.clear(); // passa a vassoura na lista (limpa tudo)
       
       System.out.println("Lista atualizada: " + nomes);
    }

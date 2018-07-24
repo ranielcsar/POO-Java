@@ -7,7 +7,7 @@ public class Exemplo1 {
    public static void main(String []args)
    {
       Collection<String> nomes = new ArrayList();
-         nomes.add("Raniel");
+         nomes.add("Raniel"); // adiciona nomes à lista 'nomes' instanciada a cima
          nomes.add("Noob");
          nomes.add("Maria");
          nomes.add("Jeff");
@@ -19,11 +19,11 @@ public class Exemplo1 {
          System.out.println(nome);
       }
       
-      nomes.remove("Raniel");
+      nomes.remove("Raniel"); // remove um elemento específico
       
       System.out.println("Lista atualizada: " + nomes);
       
-      nomes.clear();
+      nomes.clear(); // passa a vassoura na lista
       
       System.out.println("Lista atualizada: " + nomes);
    }

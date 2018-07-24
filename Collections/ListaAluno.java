@@ -12,7 +12,7 @@ public class ListaAluno {
         ComparaAluno comparar = new ComparaAluno();
         Aluno aluno;
         
-        // adiciona elementos ‡ lista instanciada na linha 9
+        // adiciona elementos √† lista instanciada na linha 10
         Aluno vader = new Aluno("Darth Vader", "Lado Negro", 0);
         Aluno majinboo = new Aluno("Majin Boo", "Transformando em doces", 0);
         Aluno doflamingo = new Aluno("Donquixote Doflamingo", "Como roubar o trono", 0);
@@ -21,7 +21,7 @@ public class ListaAluno {
         lista.add(majinboo);
         lista.add(doflamingo);        
       
-        Collections.sort(lista, comparar); // ordena e compara pra ver se s„o iguais        
+        Collections.sort(lista, comparar); // ordena e compara pra ver se s√£o iguais        
         
         Iterator<Aluno> itr = lista.iterator(); // usado para percorrer a lista
         

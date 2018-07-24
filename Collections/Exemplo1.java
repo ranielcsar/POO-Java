@@ -7,7 +7,7 @@ public class Exemplo1 {
    public static void main(String []args)
    {
       Collection<String> nomes = new ArrayList();
-         nomes.add("Raniel"); // adiciona nomes à lista 'nomes' instanciada a cima
+         nomes.add("Raniel"); // adiciona nomes à lista 'nomes' instanciada acima
          nomes.add("Noob");
          nomes.add("Maria");
          nomes.add("Jeff");

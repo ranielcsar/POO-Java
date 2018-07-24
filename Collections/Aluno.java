@@ -15,6 +15,18 @@ public class Aluno implements Comparable<Aluno> {
         return this.nome.compareTo(aluno.getNome());
     }
     
+    public boolean equals(Object aluno)
+    {
+        Aluno auxiliar = (Aluno) aluno;
+        
+        return this.nome.equals(auxiliar.getNome());
+    }
+    
+    public int hashCode() 
+    {
+        return this.nome.hashCode();
+    }
+    
     public String toString() { return this.nome; }
 
     public String getNome() { return nome; }

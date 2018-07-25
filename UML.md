@@ -31,4 +31,4 @@ ___
 
 ### Padrões OMG (oh my god):
 
-# IMCOMPLETO
+# INCOMPLETO

@@ -31,4 +31,58 @@ ___
 
 ### Padrões OMG (oh my god):
 
-# INCOMPLETO
+Os padrões OMG são implementados por fornecedores, utilizadores finais, instituições acadêmicas e agências governamentais.A OMG supervisiona a definição e manutenção de especificações UML. O que permite uma linguagem única para várias finalidades.
+
+___
+
+| Segundo o site Lucidchart [2018?]: |
+|-|
+
+> Apesar disso, a UML é eficaz para níveis altos de modelagem de dados conceituais, e pode ser usada em diferentes tipos de diagramas UML.
+
+___
+
+### Conceitos de modelagem UML:
+
+* **Funcional:** diagramas de caso de uso que descrevem a funcionalidade a partir da visão do usuário.
+
+* **Objeto:** diagramas de classes que descreve a estrutura do sistemas em termos de objetos, atributos, métodos, etc...
+
+* **Dinâmico:** diagramas de interação, máquinas de estados e atividade. Usados para descrever o comportamento interno do programa.
+
+Existem dois tipos de diagrama: ***estrutural*** e ***comportamental***.
+
+___
+
+### Tipos de diagramas:
+
+* **Diagrama de classes:**
+
+	* diagrama mais usado em UML e a principal base de qualquer solução orientada a objetos.
+
+
+* **Diagrama de componentes:** 
+
+	* usado com sistemas complexos, na maioria das vezes, exibe a relação estrutural de elementos do sistema do software.
+
+
+* **Diagrama de estrutura composta:**
+
+	* utilizados para mostrar a estrutura interna de uma classe.
+
+
+* **Diagrama de implementação:**
+
+	* útil quando uma solução de software é implantada em diversas máquinas com configurações únicas, pois demonstra o hardware do sistema e seu software.
+
+
+* **Diagrama de objetos:**
+
+	* mostra a relação entre objetos usando exemplos do mundo real e retrata um sistema em um determinado momento.
+
+___
+
+
+### REFERÊNCIAS:
+
+LUCIDCHART. O que é um diagrama uml?. Disponível em: <https://www.lucidchart.com/pages/pt/o-que-e-uml>. Acesso em: 28 jul. 2018.

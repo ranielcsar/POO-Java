@@ -31,7 +31,7 @@ ___
 
 ### Padrões OMG (oh my god):
 
-Os padrões OMG são implementados por fornecedores, utilizadores finais, instituições acadêmicas e agências governamentais.A OMG supervisiona a definição e manutenção de especificações UML. O que permite uma linguagem única para várias finalidades.
+Os padrões **OMG** (Object Management Group) são implementados por fornecedores, utilizadores finais, instituições acadêmicas e agências governamentais. A OMG supervisiona a definição e manutenção de especificações UML. O que permite uma linguagem única para várias finalidades.
 
 ___
 

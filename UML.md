@@ -2,7 +2,7 @@
 
 * O que é?
 
-**UML** - Unified Modeling Language ou, em português, Linguagem de modelagem unificada, foi criada para criar uma linguagem de modelagem comum. Usado para arquitetura, design e implementação de softwares complexos. Ou seja, a UML descreve o limite, a estrutura, o comportamento e os objetos contidos no sistema.
+**UML** - Unified Modeling Language ou, em português, Linguagem de modelagem unificada, foi projetada para criar uma linguagem de modelagem comum. Usado para arquitetura, design e implementação de softwares complexos. Ou seja, a UML descreve o limite, a estrutura, o comportamento e os objetos contidos no sistema.
 
 Importante lembrar que a UML tem uma **relação direta com a análise e o design orientados a objetos**.
 

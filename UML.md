@@ -36,9 +36,8 @@ Os padrões **OMG** (Object Management Group) são implementados por fornecedore
 ___
 
 | Segundo o site Lucidchart [2018?]: |
-|:-| 
-|
-Apesar disso, a UML é eficaz para níveis altos de modelagem de dados conceituais, e pode ser usada em diferentes tipos de diagramas UML. |
+|:- 
+|Apesar disso, a UML é eficaz para níveis altos de modelagem de dados conceituais, e pode ser usada em diferentes tipos de diagramas UML. |
 
 
 ___

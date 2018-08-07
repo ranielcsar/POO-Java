@@ -14,7 +14,7 @@ Na programação orientada a objetos, os algoritmos são representados por "obje
 
 | Segundo o site Lucidchart [2018?]: |
 |:-
-| "A UML é uma combinação de várias notações orientadas a objetos: design orientado a objetos, técnica de modelagem de objetos e engenharia de software orientada a objetos. |
+| "A UML é uma combinação de várias notações orientadas a objetos: design orientado a objetos, técnica de modelagem de objetos e engenharia de software orientada a objetos. <br>
 A UML usa os pontos fortes destas três abordagens para apresentar uma metodologia mais consistente e mais fácil de usar. A UML representa as melhores práticas para desenvolver e documentar aspectos diferentes da modelagem de software e sistemas de negócios." |
 
 ___

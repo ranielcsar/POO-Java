@@ -2,7 +2,7 @@
 
 Requisitos de software é aquilo que é exigido de um software. O que eu preciso para um sistema de vendas funcionar? Quais são os requisitos? As especificações? A performance é boa?
 
-Dito isso precisamos separar cada um deles par analisarmos e implementarmos os códigos.
+Dito isso precisamos separar cada um deles para analisarmos e implementarmos os códigos.
 
 Existem dois tipos de requisitos: ***funcionais*** e ***não-funcionais***.
 

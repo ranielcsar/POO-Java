@@ -21,7 +21,7 @@ ___
 
 ### Origens da UML:
 
-James Rumbaugh, Grady Booch e Ivar Jacobson, conhecidos como ***Os três amigos*** da engenharia de software, uniram-se para proporcionar maior clareza aos programadores através da criação de novos padrões.
+James Rumbaugh, Grady Booch e Ivar Jacobson, conhecidos como ***os três amigos*** da engenharia de software, uniram-se para proporcionar maior clareza aos programadores através da criação de novos padrões.
 
 Em 1996, os esforços desses três resultaram no UML **0.9** e **0.91**. Ficou claro que organizações como Microsoft, IBM e Oracle passaram a considerar o UML como algo crucial no desenvolvimento.
 

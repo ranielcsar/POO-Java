@@ -12,10 +12,9 @@ ___
 
 Na programação orientada a objetos, os algoritmos são representados por "objetos" que são manipulados e que retratam objetos do mundo real. Assim como um simples lápis é um objeto, na programação orientada a objetos, você pode criar um lápis com as mesmas funções de um lápis da vida real. Ou seja, pintar, escrever, riscar, furar os outros, etc...(brincadeira, não façam isso).
 
-| Segundo o site Lucidchart [2018?]: |
+| Segundo o site Lucidchart [2018?]: 
 |:-
-| "A UML é uma combinação de várias notações orientadas a objetos: design orientado a objetos, técnica de modelagem de objetos e engenharia de software orientada a objetos. <br>
-A UML usa os pontos fortes destas três abordagens para apresentar uma metodologia mais consistente e mais fácil de usar. A UML representa as melhores práticas para desenvolver e documentar aspectos diferentes da modelagem de software e sistemas de negócios." |
+| "A UML é uma combinação de várias notações orientadas a objetos: design orientado a objetos, técnica de modelagem de objetos e engenharia de software orientada a objetos. <br><br> A UML usa os pontos fortes destas três abordagens para apresentar uma metodologia mais consistente e mais fácil de usar. A UML representa as melhores práticas para desenvolver e documentar aspectos diferentes da modelagem de software e sistemas de negócios." |
 
 ___
 

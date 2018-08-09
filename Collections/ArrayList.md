@@ -88,6 +88,6 @@ ___
 
 ### REFERÊNCIAS
 
-CAMARGO, W. B. Exemplos com arraylists e suas propriedades e métodos – coleções: estrutura da linguagem – parte 2. Disponível em: <https://www.devmedia.com.br/exemplos-com-arraylists-e-suas-propriedades-e-metodos-colecoes-estrutura-da-linguagem-parte-2/19255>. Acesso em: 09 ago. 2018.
+CAMARGO, W. B. Exemplos com arraylists e suas propriedades e métodos – coleções: estrutura da linguagem – parte 2. **DevMedia**. Disponível em: <https://www.devmedia.com.br/exemplos-com-arraylists-e-suas-propriedades-e-metodos-colecoes-estrutura-da-linguagem-parte-2/19255>. Acesso em: 09 ago. 2018.
 
-GARBADE, M. J. Coisas que você deveria saber sobre java arraylist. Disponível em: <http://blog.liveedu.tv/coisas-que-voce-deveria-saber-sobre-java-arraylist/>. Acesso em: 09 ago. 2018.
+GARBADE, M. J. Coisas que você deveria saber sobre java arraylist. **LIVEEDU.TV BLOG**. Disponível em: <http://blog.liveedu.tv/coisas-que-voce-deveria-saber-sobre-java-arraylist/>. Acesso em: 09 ago. 2018.

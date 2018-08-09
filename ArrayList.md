@@ -83,7 +83,7 @@ Pronto, removemos o personagem Goku da lista.
 listaPersonagens.clear();
 ```
 
-## INCOMPLETO *falta iterator
+Esse é um dos básicos para começar a usar a ArrayList do Java.
 ___
 
 ### REFERÊNCIAS

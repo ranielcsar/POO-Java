@@ -21,7 +21,7 @@ Digamos que tenhamos uma classe **Anime** onde vamos ter como atributo: nome e a
 ! Lembre-se que estamos usando uma lista do tipo **ArrayList**.
 
 ```java
-ArrayList<Anime> listaAnimes = new ArrayList<>();
+List<Anime> listaAnimes = new ArrayList<>();
 ```
 
 Adicionamos animes à lista:

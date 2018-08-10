@@ -1,6 +1,6 @@
 ### List e ArrayList:
 
-Lista é uma interface implementada pela classe ArrayList, que é implementada como se fosse um **vetor[]**, porém ela cresce dinamicamente à medida em que se adiciona elementos. Ou seja, ela se adapta. Se expande conforme você quiser. Além disso pode ser útil no gerenciamento de consumo de memória de programa, já que elementos que não servem são excluídos.
+List é uma interface implementada pela classe ArrayList, que é implementada como se fosse um **vetor[]**, porém ela cresce dinamicamente à medida em que se adiciona elementos. Ou seja, ela se adapta. Se expande conforme você quiser. Além disso pode ser útil no gerenciamento de consumo de memória de programa, já que elementos que não servem são excluídos.
 
 Além disso, nos permite acessar os elementos usando:
 
@@ -93,4 +93,4 @@ CAMARGO, W. B. Exemplos com arraylists e suas propriedades e métodos – coleç
 
 GARBADE, M. J. Coisas que você deveria saber sobre java arraylist. **LIVEEDU.TV BLOG**. Disponível em: <http://blog.liveedu.tv/coisas-que-voce-deveria-saber-sobre-java-arraylist/>. Acesso em: 09 ago. 2018.
 
-LANHELLAS, R. Java collections: set, list e iterator. DevMedia. Disponível em: <https://www.devmedia.com.br/java-collections-set-list-e-iterator/29637>. Acesso em: 10 ago. 2018.
+LANHELLAS, R. Java collections: set, list e iterator. **DevMedia**. Disponível em: <https://www.devmedia.com.br/java-collections-set-list-e-iterator/29637>. Acesso em: 10 ago. 2018.

@@ -59,9 +59,10 @@ Usando o método **hasNext()** que retorna *true* ou *false*, verificamos se ain
 
 ```java
 System.out.println(animeIterator.next().getNome());
+System.out.println(animeIterator.next().getAutor());
 ```
 
-Assim ele irá mostrar o nome que está associado a esse elemento.
+Assim ele irá mostrar o nome e autor que está associado a esse elemento.
 
 * Existem outros métodos para percorrer a lista, citarei mais dois exemplos:
 

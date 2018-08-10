@@ -8,7 +8,6 @@ A iterator possui métodos como:
 
 * next() - próximo
 * hasNext() - há próximo
-* remove() - remover
 
 Primeiramente precisamos importar a biblioteca do Iterator com **java.util.Iterator**.
 

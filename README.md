@@ -8,4 +8,6 @@
 
 * [Requisitos de software](https://github.com/ranielcsar/POO-Java/blob/master/Requisitos.md)
 
-* [Collections - ArrayList](https://github.com/ranielcsar/POO-Java/blob/master/Collections/ArrayList.md)
+* [Collections - List e ArrayList](https://github.com/ranielcsar/POO-Java/blob/master/Collections/ArrayList.md)
+
+* [Collections - Iterator](https://github.com/ranielcsar/POO-Java/blob/master/Collections/Iterator.md)

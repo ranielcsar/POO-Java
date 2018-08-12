@@ -1,3 +1,5 @@
+/* animando a parada (tunts tunts) */
+
 import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -16,9 +18,9 @@ public class Animacao extends JFrame {
 		
 		while (animar)
 		{
-			if (System.currentTimeMillis() >= atualizacao) // tempo em milÈsimos de segundo
+			if (System.currentTimeMillis() >= atualizacao) // tempo em mil√©simos de segundo
 			{
-				contador++; // respons·vel pela mudanÁa na tela (tanto eixo quanto tamanho do desenho)
+				contador++; // respons√°vel pela mudan√ßa na tela (tanto eixo quanto tamanho do desenho)
 				tela.repaint();
 				
 				atualizacao = System.currentTimeMillis() + fps;
@@ -46,7 +48,7 @@ public class Animacao extends JFrame {
 			}
 		};
 		
-		super.getContentPane().add(tela); // adiciona a tela ‡ janela (ou moldura)		
+		super.getContentPane().add(tela); // adiciona a tela √† janela (ou moldura)		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(640, 480); // altura, largura

@@ -1,5 +1,4 @@
-## Aprendendo sobre jogos em Java com o livro: "A lógica do jogo: recriando clássicos da história do videogame." Casa do Código.
+## Aprendendo sobre jogos em Java com o livro: "A lÃ³gica do jogo: recriando clÃ¡ssicos da histÃ³ria do videogame." Casa do CÃ³digo.
 
-___
 
-#### Ainda não tem jogos completos, apenas aprendendo por enquanto.
+#### Ainda nÃ£o tem jogos completos, apenas aprendendo por enquanto.

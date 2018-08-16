@@ -30,11 +30,11 @@ ___
 
 Interações com objetos ou outras classes no diagrama, são de suma importância.
 
-![alt text](https://raw.githubusercontent.com/ranielcsar/POO-Java/master/Diagramas/diagramaHeran%C3%A7a.png "Herança")
+![alt text](https://raw.githubusercontent.com/ranielcsar/POO-Java/master/Arquivos/Diagramas/diagramaHeran%C3%A7a.png "Herança")
 
 Acima vemos um exemplo de herança, representada por essa seta com uma ponta *fechada*. Onde o naipe *herda* os atributos da classe *Carta* mudando apenas o tipo do naipe e o número.
 
-![alt text](https://raw.githubusercontent.com/ranielcsar/POO-Java/master/Diagramas/DiagramaAssosciado.png "Associado")
+![alt text](https://raw.githubusercontent.com/ranielcsar/POO-Java/master/Arquivos/Diagramas/DiagramaAssosciado.png "Associado")
 
 Temos aqui a representação de associação bidirecional, representada pela linha que liga um a outro. As classes sabem que se relacionam.
 

@@ -1,4 +1,4 @@
-package cobrinha;
+package tableSnake;
 
 import javax.swing.*;
 import java.awt.*;
@@ -124,15 +124,29 @@ public class Tela extends JFrame {
                 motor.rodando = true;
             }
             
-            if (evento.getKeyCode() == KeyEvent.VK_LEFT)
+            switch (evento.getKeyCode())
             {
-                motor.jogo.directionLeft();
-            } else if (evento.getKeyCode() == KeyEvent.VK_RIGHT) {
-                motor.jogo.directionRight();
-            } else if (evento.getKeyCode() == KeyEvent.VK_UP) {
-                motor.jogo.directionUp();
-            } else if (evento.getKeyCode() == KeyEvent.VK_DOWN) {
-                motor.jogo.directionDown();
+            	case KeyEvent.VK_LEFT:
+            	case KeyEvent.VK_A:
+            		motor.jogo.directionLeft();
+            		break;
+            		
+            	case KeyEvent.VK_RIGHT:
+            	case KeyEvent.VK_D:
+            		motor.jogo.directionRight();
+            		break;
+            		
+            	case KeyEvent.VK_UP:
+            	case KeyEvent.VK_W:
+            		motor.jogo.directionUp();
+            		break;
+            		
+            	case KeyEvent.VK_DOWN:
+            	case KeyEvent.VK_S:
+            		motor.jogo.directionDown();
+            		break;
+            	default:
+            		break;
             }
         }
     }

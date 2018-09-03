@@ -1,4 +1,4 @@
-package cobrinha;
+package tableSnake;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -78,7 +78,6 @@ public class Snake implements Iterable<Elemento> {
         return snakeList.iterator();
     }
     
-    
     public boolean contains(Elemento elemento)
     {        
         for (Elemento element : this)
@@ -87,18 +86,5 @@ public class Snake implements Iterable<Elemento> {
         }
         
         return false;
-    }
-    
-    public String toString()
-    {        
-        StringBuilder string = new StringBuilder();
-        
-        for (Elemento element : this)
-        {
-            string.append(element);
-            string.append("\n");
-        }
-        
-        return new String(string);
     }
 }

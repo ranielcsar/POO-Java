@@ -1,9 +1,12 @@
-package cobrinha;
+package tableSnake;
 
 public class Elemento {
     
     private Tipo tipo;
+    private int numero;
     private int x, y;
+    
+    public Elemento() { }
     
     public Elemento(int x, int y)
     {
@@ -18,6 +21,13 @@ public class Elemento {
         this.y = y;
     }
     
+    public Elemento(Tipo tipo, int x, int y, int numero)
+    {
+    	this.tipo = tipo;
+    	this.numero = numero;
+        this.x = x;
+        this.y = y;
+    }
     
     void setTipo(Tipo tipo) { this.tipo = tipo; }   
     
@@ -27,21 +37,17 @@ public class Elemento {
     
     int getY() { return y; }
     
+    int getNumero() { return this.numero; }
+    
     
     public boolean igual(Object objeto) 
     {        
         if (!(objeto instanceof Elemento)) { return false; }
         
-        Elemento elemento = (Elemento) objeto;
+        Elemento elemento = (Elemento) objeto;      
         
         return elemento.x == x && elemento.y == y;
     }
-
-    public String toString ()
-    {
-        return tipo + " em: (" + x + ", " + y + ")";
-    }
-    
     
     enum Tipo {
         VAZIO,

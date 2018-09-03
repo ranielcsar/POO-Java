@@ -1,4 +1,4 @@
-package cobrinha;
+package tableSnake;
 
 import java.awt.*;
 
@@ -14,5 +14,5 @@ public class Propriedades {
     static Color BG = Color.decode("#371f3d"); 
     static Color FOOD = Color.decode("#e16e81");
     static Color SNAKE = Color.decode("#16f1b4");
-    static Color HEADcor = Color.decode("#e5ef9f");
+    static Color HEAD = Color.decode("#e5ef9f");
 }

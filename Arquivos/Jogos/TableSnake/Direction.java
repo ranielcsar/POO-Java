@@ -1,4 +1,4 @@
-package cobrinha;
+package tableSnake;
 
 public enum Direction {
 	

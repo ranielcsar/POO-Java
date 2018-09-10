@@ -27,16 +27,11 @@ public class Elemento {
     	this.numero = numero;
         this.x = x;
         this.y = y;
-    }
+    }  
     
-    void setTipo(Tipo tipo) { this.tipo = tipo; }   
-    
-    Tipo getTipo() { return tipo; }
-    
-    int getX() { return x; }
-    
-    int getY() { return y; }
-    
+    Tipo getTipo() { return tipo; }    
+    int getX() { return x; }    
+    int getY() { return y; }    
     int getNumero() { return this.numero; }
     
     

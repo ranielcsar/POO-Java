@@ -10,7 +10,10 @@ public class Snake implements Iterable<Elemento> {
     private int size = 2;
     private Elemento tail;
     
-    Snake() { this(Propriedades.initX, Propriedades.initY); }
+    Snake()
+    {
+    	this(Propriedades.initX, Propriedades.initY);
+    }
     
     Snake(int x, int y)
     {
@@ -18,7 +21,10 @@ public class Snake implements Iterable<Elemento> {
         snakeList.add(new Elemento(Elemento.Tipo.COBRA, x, y));
     }
     
-    int getSize() { return size; }
+    int getSize()
+    { 
+    	return size; 
+    }
     
     boolean moveLeft() { return mover(Direction.ESQUERDA); }
     boolean moveRight() { return mover(Direction.DIREITA); }
@@ -65,13 +71,25 @@ public class Snake implements Iterable<Elemento> {
         }
     }
     
-    Elemento getTail() { return tail; }
+    Elemento getTail()
+    { 
+    	return tail;
+    }
     
-    Elemento getHead() { return snakeList.get(0); }
+    Elemento getHead()
+    { 
+    	return snakeList.get(0);
+    }
     
-    void crescer() { size++; }
+    void crescer()
+    {
+    	size++;
+    }
     
-    void crescer(int x) { size += x; }
+    void diminuir()
+    { 
+    	snakeList.remove(2);
+    }
     
     public synchronized Iterator<Elemento> iterator()
     {        

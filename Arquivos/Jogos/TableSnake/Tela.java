@@ -9,7 +9,7 @@ public class Tela extends JFrame {
     
     private static final long serialVersionUID = 1L;
     
-    private Engine motor;
+    private final Engine motor;
     
     private Tela() 
     {
@@ -58,12 +58,13 @@ public class Tela extends JFrame {
 
         private static final long serialVersionUID = 1L;
         
-        private Game jogo;      
+        private final Game jogo;      
         private boolean rodando = false;
         
         private Engine(Game game) { this.jogo = game; }
         
         
+        @Override
         protected void paintComponent(Graphics lapis)
         {            
             super.paintComponent(lapis);
@@ -77,6 +78,7 @@ public class Tela extends JFrame {
             jogo.pintar(lapis);
         }
         
+        @Override
         public void run() 
         {            
             long lastTime = System.nanoTime();
@@ -107,15 +109,14 @@ public class Tela extends JFrame {
     {        
         try
         {
-            Thread.sleep(90); // muda a velocidade da cobrinha
-        } catch (InterruptedException exception) {
-            exception.printStackTrace();
-        }
+            Thread.sleep(95); // muda a velocidade da cobrinha
+        } catch (InterruptedException exception) { }
     }       
     
     
     public class Teclas extends KeyAdapter {
         
+        @Override
         public void keyPressed(KeyEvent evento)
         {            
             if (!motor.rodando)
@@ -153,6 +154,6 @@ public class Tela extends JFrame {
     
     public static void main(String[] args)
     {
-        new Tela();
+       Tela tela = new Tela();
     }
 }

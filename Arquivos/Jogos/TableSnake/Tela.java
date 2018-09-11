@@ -61,8 +61,10 @@ public class Tela extends JFrame {
         private final Game jogo;      
         private boolean rodando = false;
         
-        private Engine(Game game) { this.jogo = game; }
-        
+        private Engine(Game game)
+        {
+           this.jogo = game;
+        }        
         
         @Override
         protected void paintComponent(Graphics lapis)
@@ -109,7 +111,7 @@ public class Tela extends JFrame {
     {        
         try
         {
-            Thread.sleep(95); // muda a velocidade da cobrinha
+            Thread.sleep(95); // muda a velocidade da cobrinha. quanto maior o número, mais devagar
         } catch (InterruptedException exception) { }
     }       
     

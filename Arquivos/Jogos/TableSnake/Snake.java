@@ -88,8 +88,8 @@ public class Snake implements Iterable<Elemento> {
     
     void diminuir()
     { 
-    	snakeList.remove(snakeList.size() - 3);
-        size -= 2;
+    	snakeList.remove(snakeList.size() - 2);
+        size -= 2;        
     }
     
     @Override

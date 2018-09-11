@@ -88,9 +88,11 @@ public class Snake implements Iterable<Elemento> {
     
     void diminuir()
     { 
-    	snakeList.remove(2);
+    	snakeList.remove(snakeList.size() - 3);
+        size -= 2;
     }
     
+    @Override
     public synchronized Iterator<Elemento> iterator()
     {        
         return snakeList.iterator();

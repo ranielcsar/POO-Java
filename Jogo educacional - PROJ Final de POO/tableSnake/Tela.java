@@ -1,7 +1,19 @@
+/*
+# Jogo feito por:
+#
+# Raniel César (ranoob)
+#
+# Pode usar o código a vontade, mas não
+# tire os créditos. :D
+#
+#
+*/
+
 package tableSnake;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Timer;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -10,6 +22,7 @@ public class Tela extends JFrame {
     private static final long serialVersionUID = 1L;
     
     private final Engine motor;
+    private Timer timer;
     
     private Tela() 
     {
@@ -59,7 +72,7 @@ public class Tela extends JFrame {
         private static final long serialVersionUID = 1L;
         
         private final Game jogo;      
-        private boolean rodando = false;
+        private Status status = Status.NAO_COMECOU;
         
         private Engine(Game game)
         {
@@ -121,10 +134,10 @@ public class Tela extends JFrame {
         @Override
         public void keyPressed(KeyEvent evento)
         {            
-            if (!motor.rodando)
+            if (motor.status == Status.NAO_COMECOU)
             {
                 startGame(motor);
-                motor.rodando = true;
+                motor.status = Status.RODANDO;
             }
             
             switch (evento.getKeyCode())

@@ -1,3 +1,14 @@
+/*
+# Jogo feito por:
+#
+# Raniel César (ranoob)
+#
+# Pode usar o código a vontade, mas não
+# tire os créditos. :D
+#
+#
+*/
+
 package tableSnake;
 
 import java.awt.Color;
@@ -44,16 +55,26 @@ public class Matematica {
         lapis.drawRoundRect(480, 20, 300, 60, 20, 20);
         lapis.setFont(new Font("Verdana", 1, 45));
 
-        lapis.drawString(Integer.toString(getNumero1()), 490, 67);
-        lapis.drawString("x", 550, 65); 	 		
-        lapis.drawString(Integer.toString(getNumero2()), 610, 67);
-        lapis.drawString("=", 660, 67);
-    }
-
-    public void reset()
-    {
-       setNumero1(0);
-       setNumero2(0);
+       if (!hasNumber && !temResultado)
+       {
+          lapis.drawString("?", 490, 67);
+          lapis.drawString("x", 550, 65); 	 		
+          lapis.drawString("?", 610, 67);
+          lapis.drawString("=", 660, 67);
+          
+       } else if (hasNumber && !temResultado) {
+          
+          lapis.drawString(Integer.toString(getNumero1()), 490, 67);
+          lapis.drawString("x", 550, 65); 	 		
+          lapis.drawString("?", 610, 67);
+          lapis.drawString("=", 660, 67);
+       } else {
+          
+          lapis.drawString(Integer.toString(getNumero1()), 490, 67);
+          lapis.drawString("x", 550, 65); 	 		
+          lapis.drawString(Integer.toString(getNumero2()), 610, 67);
+          lapis.drawString("=", 660, 67);
+       }
     }
 
     public void setNumero1(int numero1) { this.numero1 = numero1; }

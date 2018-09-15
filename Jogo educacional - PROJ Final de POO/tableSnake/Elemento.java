@@ -1,3 +1,14 @@
+/*
+# Jogo feito por:
+#
+# Raniel César (ranoob)
+#
+# Pode usar o código a vontade, mas não
+# tire os créditos. :D
+#
+#
+*/
+
 package tableSnake;
 
 public class Elemento {
@@ -33,6 +44,9 @@ public class Elemento {
     int getX() { return x; }    
     int getY() { return y; }    
     int getNumero() { return this.numero; }
+    
+    void setX(int x) { this.x = x; }
+    void setY(int y) { this.y = y; }
     
     
     public boolean igual(Object objeto) 

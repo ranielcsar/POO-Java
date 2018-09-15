@@ -1,3 +1,14 @@
+/*
+# Jogo feito por:
+#
+# Raniel César (ranoob)
+#
+# Pode usar o código a vontade, mas não
+# tire os créditos. :D
+#
+#
+*/
+
 package tableSnake;
 
 import java.awt.*;
@@ -19,7 +30,7 @@ public class Game {
     private int cantos;
     
     private boolean hasNumber;
-    private boolean aumentarRandom;
+    private boolean mudarRandom;
     private boolean acertou;
     private boolean desenhar;
     private boolean checandoResultado;
@@ -37,7 +48,7 @@ public class Game {
 
     void atualizar() 
     { 
-    	moverCobra();
+        moverCobra();
     }
 
     void novaComida()
@@ -48,9 +59,36 @@ public class Game {
         
         numeroRandom = random.nextInt(10);
         
-        if (aumentarRandom)
+        if (mudarRandom)
         {
-            numeroRandom = random.nextInt(math.multiplicar());
+            numeroRandom = math.multiplicar() + random.nextInt(5);
+            
+            if (numeroRandom == math.multiplicar())
+            {
+               numeroRandom++;
+            }
+            
+            if (math.multiplicar() == 0)
+            {
+               if (math.getNumero1() == 0)
+               {
+                  numeroRandom = math.getNumero2();
+               } else {
+                  numeroRandom = math.getNumero1();
+               }
+            }
+            
+            if (math.getNumero1() == 0 && math.getNumero2() == 0)
+            {
+               comida = null;
+            }
+            
+            if (math.getNumero1() == 1)
+            {
+               numeroRandom = math.getNumero1();
+            } else if (math.getNumero2() == 1) {
+               numeroRandom = math.getNumero2();
+            }
             
             comidaResultado = new Elemento(Elemento.Tipo.COMIDA,
                     rX.nextInt(Propriedades.COL), rY.nextInt(Propriedades.ROW), math.multiplicar());
@@ -59,18 +97,18 @@ public class Game {
         }
         
         comida = new Elemento(Elemento.Tipo.COMIDA,
-    	        rX.nextInt(Propriedades.COL), rY.nextInt(Propriedades.ROW), numeroRandom);
+                rX.nextInt(Propriedades.COL), rY.nextInt(Propriedades.ROW), numeroRandom);
         
         
         if (cobra.contains(comida) || cobra.contains(comidaResultado))
-        {         	
+        {           
             novaComida();                       
         }
     }
     
     public Elemento getComida()
     { 
-    	return comida;
+        return comida;
     }
 
     void directionLeft()
@@ -108,8 +146,8 @@ public class Game {
 
     private void moverCobra()
     {
-    	switch (movimento)
-    	{
+        switch (movimento)
+        {
             case ESQUERDA:
                 moveSnakeLeft();
                 break;
@@ -124,14 +162,14 @@ public class Game {
                 break;
             default:
                     break;
-    	}      
+        }      
 
         lastMove = movimento;
     }
 
     private void moveSnakeLeft()
     {         
-        if (!cobra.moveLeft()) { sair(); }
+        if (!cobra.moveLeft()) { gameOver(); }
 
         checaParedes();
         checarSeComeu();
@@ -141,7 +179,7 @@ public class Game {
 
     private void moveSnakeRight()
     {         
-        if (!cobra.moveRight()) { sair(); }
+        if (!cobra.moveRight()) { gameOver(); }
 
         checaParedes();
         checarSeComeu();
@@ -151,7 +189,7 @@ public class Game {
 
     private void moveSnakeUp()
     {         
-        if (!cobra.moveUp()) { sair(); }
+        if (!cobra.moveUp()) { gameOver(); }
 
         checaParedes();
         checarSeComeu();
@@ -161,7 +199,7 @@ public class Game {
 
     private void moveSnakeDown()
     {         
-        if (!cobra.moveDown()) { sair(); }
+        if (!cobra.moveDown()) { gameOver(); }
 
         checaParedes();
         checarSeComeu();
@@ -174,18 +212,33 @@ public class Game {
     {         
         Elemento kbca = cobra.getHead();
 
-        boolean esquerda = kbca.getX() < 0;
-        boolean direita = kbca.getX() >= Propriedades.COL;
-        boolean cima = kbca.getY() < 0;
-        boolean baixo = kbca.getY() >= Propriedades.ROW;
+        // esquerda
+        if (kbca.getX() < 0)
+        {
+            kbca.setX(Propriedades.COL);
+        }
 
-        boolean fora = esquerda || direita || cima || baixo;
-
-        if (fora) { sair(); }
+        // direita
+        if (kbca.getX() > Propriedades.COL)
+        {
+           kbca.setX(0);
+        }
+        
+        // cima
+        if (kbca.getY() < 0)
+        {
+           kbca.setY(Propriedades.ROW);
+        }
+        
+        // baixo
+        if (kbca.getY() > Propriedades.ROW)
+        {
+           kbca.setY(0);
+        }
     }
      
     private void checarSeComeu()
-    {    	 
+    {        
         if (comeu() && !checandoResultado)
         {
             numero = comida.getNumero();
@@ -198,14 +251,14 @@ public class Game {
             
             if (contadora == 2)
             {
-            	aumentarRandom = true;                               
+                mudarRandom = true;                               
                 checandoResultado = true;
                 
-            	novaComida();
+                novaComida();
             } else {
-            	aumentarRandom = false;              
-            	
-            	novaComida();
+                mudarRandom = false;              
+                
+                novaComida();
             }
         }
         
@@ -218,22 +271,22 @@ public class Game {
     
     private void checarResultado()
     {
-    	if (comeuResultado())
-    	{
+        if (comeuResultado())
+        {
             aumentarCobra();
             acertou = true;
-    	} else {
+        } else {
             diminuirCobra();
             acertou = false;
-    	}
+        }
         
         desenhar = true;
         checandoResultado = false;
-        aumentarRandom = false;
+        mudarRandom = false;
         contadora = 0;
     }
     
-    private void sair()
+    private void gameOver()
     {
        System.out.println("Pontuação final: " + getScore());
        System.exit(0);
@@ -241,17 +294,17 @@ public class Game {
 
     int getScore()
     {
-    	return score;
+        return score;
     }
 
     public boolean comeu()
     { 
-    	return cobra.getHead().igual(comida);
+        return cobra.getHead().igual(comida);
     }
     
     public boolean comeuResultado()
     { 
-    	return cobra.getHead().igual(comidaResultado);
+        return cobra.getHead().igual(comidaResultado);
     }
 
     private void aumentarCobra()
@@ -262,12 +315,13 @@ public class Game {
     
     private void diminuirCobra()
     {
-    	cobra.diminuir();
-    	score -= 5;
+        cobra.diminuir();
+        score -= 5;
         
-        if (cobra.getSize() < 1)
+        if (cobra.getSize() < 2)
         {
-           sair();
+           score = 0;
+           gameOver();
         }
     }
      
@@ -298,8 +352,8 @@ public class Game {
         if (acertou)
         {
             lapis.setColor(Propriedades.SNAKE);
-            lapis.drawString(Integer.toString(math.multiplicar()), 710, 67);		
-        } else {		
+            lapis.drawString(Integer.toString(math.multiplicar()), 710, 67);        
+        } else {        
             lapis.setColor(Propriedades.FOOD);
             lapis.drawString(Integer.toString(math.multiplicar()), 710, 67);
         }
@@ -334,15 +388,15 @@ public class Game {
 
         lapis.setFont(new Font("Verdana", 1, 20));
 
-        if (!aumentarRandom)
+        if (!mudarRandom)
         {
            lapis.setColor(Propriedades.FOOD);      
               lapis.fillRoundRect(x + 1, y + 1, Propriedades.PIXELS - 2, Propriedades.PIXELS - 2, cantos, cantos);         
 
            lapis.setColor(Color.WHITE);
-              lapis.drawString(Integer.toString(comida.getNumero()), x + 8, y + 23);		     
+              lapis.drawString(Integer.toString(comida.getNumero()), x + 8, y + 23);             
 
-        } else if (aumentarRandom) {             
+        } else if (mudarRandom) {             
              lapis.setColor(Propriedades.FOOD);      
                  lapis.fillRoundRect(x + 1, y + 1, Propriedades.PIXELS - 2, Propriedades.PIXELS - 2, cantos, cantos);         
 
@@ -355,36 +409,36 @@ public class Game {
                        lapis.drawString(Integer.toString(comida.getNumero()), x + 1, y + 23);
                     }
 
-             pintarComidaResultado(lapis);		     
+             pintarComidaResultado(lapis);           
 
          } else {
-             aumentarRandom = false;
-         }	    
+             mudarRandom = false;
+         }      
      }
 
     void pintarComidaResultado(Graphics2D lapis)
     {
         x = comidaResultado.getX() * Propriedades.PIXELS;
         y = comidaResultado.getY() * Propriedades.PIXELS;
-        int cantos = Propriedades.PIXELS / 3;
+        cantos = Propriedades.PIXELS / 3;
 
         resultado = comidaResultado.getNumero();
 
-        lapis.setColor(Propriedades.FOOD); 	     
+        lapis.setColor(Propriedades.FOOD);       
            lapis.fillRoundRect(x + 1, y + 1, Propriedades.PIXELS - 2, Propriedades.PIXELS - 2, cantos, cantos);
 
         lapis.setColor(Color.WHITE);
-        if (resultado < 10)
-        {
-            lapis.drawString(Integer.toString(resultado), x + 8, y + 22);
-        } else {
-            lapis.drawString(Integer.toString(resultado), x + 1, y + 22);
-        }
+           if (resultado < 10)
+           {
+               lapis.drawString(Integer.toString(resultado), x + 8, y + 22);
+           } else {
+               lapis.drawString(Integer.toString(resultado), x + 1, y + 22);
+           }        
     }
      
     void score(Graphics2D lapis)
     {
-        lapis.setColor(Color.decode("#efd19f"));
+        lapis.setColor(Propriedades.SCORE);
         lapis.setFont(new Font("Verdana", 1, 25));
         lapis.drawString("Pontuação: " + getScore(), 20, 40);
     }

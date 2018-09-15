@@ -1,10 +1,21 @@
+/*
+# Jogo feito por:
+#
+# Raniel César (ranoob)
+#
+# Pode usar o código a vontade, mas não
+# tire os créditos. :D
+#
+#
+*/
+
 package tableSnake;
 
 import java.awt.*;
 
 public class Propriedades {
     
-    static final int COL = 40;
+    static final int COL = 35;
     static final int ROW = 20;
     static final int PIXELS = 30;
     
@@ -15,4 +26,5 @@ public class Propriedades {
     static Color FOOD = Color.decode("#e16e81");
     static Color SNAKE = Color.decode("#16f1b4");
     static Color HEAD = Color.decode("#e5ef9f");
+    static Color SCORE = Color.decode("#efd19f");
 }

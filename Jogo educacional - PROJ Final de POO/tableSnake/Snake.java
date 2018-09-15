@@ -1,3 +1,14 @@
+/*
+# Jogo feito por:
+#
+# Raniel César (ranoob)
+#
+# Pode usar o código a vontade, mas não
+# tire os créditos. :D
+#
+#
+*/
+
 package tableSnake;
 
 import java.util.ArrayList;
@@ -83,13 +94,22 @@ public class Snake implements Iterable<Elemento> {
     
     void crescer()
     {
-    	size++;
+    	if (size < 2)
+        {
+           size = 3;
+        } else {
+           size++;
+        }
+        
+        System.out.println("Tamanho: " + size);
     }
     
     void diminuir()
     { 
     	snakeList.remove(snakeList.size() - 2);
-        size -= 2;        
+        size --;
+        
+        System.out.println("Tamanho: " + size);
     }
     
     @Override

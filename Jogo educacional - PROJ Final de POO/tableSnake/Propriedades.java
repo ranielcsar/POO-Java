@@ -22,6 +22,9 @@ public class Propriedades {
     
     static final int initX = COL / 2;
     static final int initY = ROW / 2;
+    
+    static final int LARGURA = COL * PIXELS;
+    static final int ALTURA = ROW * PIXELS;
 
     static Color BG = Color.decode("#371f3d"); 
     static Color FOOD = Color.decode("#e16e81");

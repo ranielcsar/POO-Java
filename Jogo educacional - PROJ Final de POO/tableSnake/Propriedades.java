@@ -11,11 +11,12 @@
 
 package tableSnake;
 
-import java.awt.*;
+
+import java.awt.Color;
 
 public class Propriedades {
     
-    static final int COL = 35;
+    static final int COL = 40;
     static final int ROW = 20;
     static final int PIXELS = 30;
     

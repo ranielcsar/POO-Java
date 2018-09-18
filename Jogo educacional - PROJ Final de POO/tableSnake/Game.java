@@ -11,13 +11,19 @@
 
 package tableSnake;
 
-import java.awt.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.util.Random;
 
 public class Game {
 
     private Elemento comida;
     private Elemento comidaResultado;
+    private TelaPrincipal tela;
     private final Snake cobra;
     private final Matematica math;
     private int score = 0;
@@ -34,6 +40,7 @@ public class Game {
     private boolean acertou;
     private boolean desenhar;
     private boolean checandoResultado;
+    private boolean gameOver = false;
     
     private Direction movimento = Direction.BAIXO;
     private Direction lastMove = movimento;
@@ -288,8 +295,7 @@ public class Game {
     
     private void gameOver()
     {
-       System.out.println("Pontuação final: " + getScore());
-       System.exit(0);
+       gameOver = true;
     }
 
     int getScore()
@@ -344,7 +350,19 @@ public class Game {
            lapis.drawString("?", 710, 67);
         }
         
+        if (gameOver)
+        {
+           desenhaGameOver(lapis);
+        }
+        
         score(lapis);
+    }
+    
+    public void desenhaGameOver(Graphics2D lapis)
+    {
+       lapis.setColor(Color.WHITE);
+       lapis.setFont(new Font("Pixeled", 1, 50));
+         lapis.drawString("GAME OVER", (Propriedades.COL * 20) / 2, (Propriedades.ROW * Propriedades.PIXELS) / 2);
     }
     
     public void desenhaResultado(Graphics2D lapis, boolean acertou)

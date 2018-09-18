@@ -41,10 +41,7 @@ public class TelaPrincipal extends JFrame {
         Game jogo = new Game();
         Engine motor = new Engine(jogo);
         
-        int canvasLargura = Propriedades.PIXELS * Propriedades.COL;
-        int canvasAltura = Propriedades.PIXELS * Propriedades.ROW;
-        
-        motor.setPreferredSize(new Dimension(canvasLargura, canvasAltura));
+        motor.setPreferredSize(new Dimension(Propriedades.LARGURA, Propriedades.ALTURA));
         
         addKeyListener(new Teclas());
         

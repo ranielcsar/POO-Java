@@ -2,7 +2,7 @@
 
 <br>
 
-- Jogo ainda em desenvolvimento.
+- Jogo quase finalizado, porém sem a parte da divisão.
 - proj. final da disciplina
 
 ---

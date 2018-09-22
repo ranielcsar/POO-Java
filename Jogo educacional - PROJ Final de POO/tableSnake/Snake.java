@@ -37,6 +37,11 @@ public class Snake implements Iterable<Elemento> {
     	return size; 
     }
     
+    void setSize(int tamanho)
+    {
+        this.size = tamanho;
+    }
+    
     boolean moveLeft() { return mover(Direction.ESQUERDA); }
     boolean moveRight() { return mover(Direction.DIREITA); }
     boolean moveUp() { return mover(Direction.CIMA); }

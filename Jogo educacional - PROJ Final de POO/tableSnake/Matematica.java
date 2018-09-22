@@ -18,8 +18,8 @@ import java.awt.Graphics2D;
 public class Matematica {
 	
     private int numero1, numero2;
-    private boolean hasNumber = false;
-    boolean temResultado = false;
+    protected boolean hasNumber = false;
+    protected boolean temResultado = false;
     private Game game;
 
     public Matematica() { }
@@ -44,7 +44,6 @@ public class Matematica {
         } else {
             setNumero2(numero);
             hasNumber = false;
-            
             temResultado = true;
         }
     }

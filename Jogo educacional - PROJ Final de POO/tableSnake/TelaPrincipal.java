@@ -25,7 +25,7 @@ public class TelaPrincipal extends JFrame {
     
     private static final long serialVersionUID = 1L;
     
-    private final Engine motor;
+    private Engine motor;
     private final Telas telas;
     private boolean travar = false;
     
@@ -72,7 +72,7 @@ public class TelaPrincipal extends JFrame {
 
         private static final long serialVersionUID = 1L;
         
-        private final Game jogo;
+        private Game jogo;
         
         private Engine(Game game)
         {
@@ -124,6 +124,11 @@ public class TelaPrincipal extends JFrame {
             // Game loop
             while (telas.getStatus() == Status.RODANDO)
             {
+                if (motor.jogo.getOver())
+                {
+                    telas.setStatus(Status.GAMEOVER);
+                }
+                
                 long now = System.nanoTime();
 
                 tempoPassado += ((now - lastTime) /  1_000_000_000.0) * FPS;
@@ -150,8 +155,6 @@ public class TelaPrincipal extends JFrame {
     }
     
     public class Teclas extends KeyAdapter {
-       
-        public boolean pause;
         
         @Override
         public void keyPressed(KeyEvent evento)
@@ -180,37 +183,52 @@ public class TelaPrincipal extends JFrame {
                     case KeyEvent.VK_DOWN:
                     case KeyEvent.VK_S:
                          motor.jogo.directionDown();
-                         break;
-                    case KeyEvent.VK_SPACE:
-                    case KeyEvent.VK_P:
-                        if (!pause)
-                        {
-                           telas.setStatus(Status.PARADO);
-                           pause = true;
-                        } else {
-                           pause = false;
-                        }
+                         break;                    
+                    default:
                         break;
                 }
             }
             
-            if (tecla == KeyEvent.VK_ENTER && telas.getStatus() == Status.NAO_COMECOU)
+            if (tecla == KeyEvent.VK_ENTER)
             {
-                startGame(motor);
-                telas.setStatus(Status.RODANDO);
+                if (telas.getStatus() == Status.NAO_COMECOU)
+                {
+                    startGame(motor);
+                    telas.setStatus(Status.RODANDO);
+                }
+                
+                if (telas.getStatus() == Status.GAMEOVER)
+                {
+                    motor.jogo.resetar();
+                    telas.setStatus(Status.RODANDO);
+                    startGame(motor);
+                }
+            }            
+            
+            if (tecla == KeyEvent.VK_P || tecla == KeyEvent.VK_SPACE)
+            {
+                if (telas.getStatus() != Status.GAMEOVER)
+                {
+                    switch (telas.getStatus())
+                    {
+                        case RODANDO:
+                            telas.setStatus(Status.PARADO);                        
+                            break;
+                        case PARADO:
+                            telas.setStatus(Status.RODANDO);
+                            startGame(motor);
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
             
-            if (tecla == KeyEvent.VK_ENTER && telas.getStatus() == Status.GAMEOVER)
+            if (tecla == KeyEvent.VK_ESCAPE)
             {
-                motor.jogo.resetar();
+                System.exit(0);
             }
-            
-            if (tecla == KeyEvent.VK_P || tecla == KeyEvent.VK_SPACE && pause)
-            {
-                telas.setStatus(Status.RODANDO);              
-                pause = false;
-            }
-        } 
+        }
     }    
     
     public static void main(String[] args)

@@ -100,16 +100,12 @@ public class Snake implements Iterable<Elemento> {
         } else {
            size++;
         }
-        
-        System.out.println("Tamanho: " + size);
     }
     
     void diminuir()
     { 
     	snakeList.remove(snakeList.size() - 2);
-        size --;
-        
-        System.out.println("Tamanho: " + size);
+        size--;
     }
     
     @Override

@@ -19,6 +19,7 @@ import java.awt.Graphics;
 public class Telas {
    
    private int x;
+   private Status status = Status.NAO_COMECOU;
    
    public Telas() {}   
    
@@ -56,9 +57,32 @@ public class Telas {
    
    public void desenhaEnter(Graphics lapis)
    {
-      lapis.setColor(Color.decode("#afa5b1"));
+      lapis.setColor(Color.decode("#ef8c47"));
       lapis.setFont(new Font("Verdana", 0, 20));
          lapis.drawString("Aperte ENTER para começar...", 450, 550);
+   }
+   
+   public void desenhaGameOver(Graphics lapis)
+   {
+      lapis.setColor(Color.WHITE);
+      lapis.setFont(new Font("Pixeled", 1, 50));
+        lapis.drawString("GAME OVER", (Propriedades.LARGURA / 3) - 9, Propriedades.ALTURA / 2);
+      
+      String texto = "APERTE ENTER PARA COMEÇAR NOVAMENTE!";
+      
+      lapis.setColor(Color.decode("#ef8c47"));
+      lapis.setFont(new Font("Verdana", 1, 20));
+        lapis.drawString(texto, (Propriedades.LARGURA / 3) - texto.length(), 330);
+   }
+   
+   public void setStatus(Status novoStatus)
+   {
+       this.status = novoStatus;
+   }
+   
+   public Status getStatus()
+   {
+       return this.status;
    }
    
 }

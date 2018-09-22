@@ -22,10 +22,10 @@ import java.util.Random;
 public class Game {
 
     private Elemento comida;
-    private Elemento comidaResultado;
-    private TelaPrincipal tela;
-    private final Snake cobra;
+    private Elemento comidaResultado;    
+    private Snake cobra;
     private final Matematica math;
+    private Telas tela = new Telas();
     private int score = 0;
     public int contadora = 0;
     private int numeroRandom;
@@ -48,7 +48,7 @@ public class Game {
     Game()
     {        
         this.cobra = new Snake();
-        this.math = new Matematica();
+        this.math = new Matematica();        
         novaComida();
         atualizar();
     }
@@ -85,11 +85,6 @@ public class Game {
                }
             }
             
-            if (math.getNumero1() == 0 && math.getNumero2() == 0)
-            {
-               comida = null;
-            }
-            
             if (math.getNumero1() == 1)
             {
                numeroRandom = math.getNumero1();
@@ -105,7 +100,6 @@ public class Game {
         
         comida = new Elemento(Elemento.Tipo.COMIDA,
                 rX.nextInt(Propriedades.COL), rY.nextInt(Propriedades.ROW), numeroRandom);
-        
         
         if (cobra.contains(comida) || cobra.contains(comidaResultado))
         {           
@@ -293,9 +287,21 @@ public class Game {
         contadora = 0;
     }
     
-    private void gameOver()
+    public void gameOver()
     {
+       tela.setStatus(Status.GAMEOVER);
        gameOver = true;
+    }
+    
+    public void resetar()
+    {
+        cobra = new Snake();               
+        score = 0;
+        contadora = 0;
+        math.setNumero1(0);
+        math.setNumero2(0);        
+        comida = null;
+        comidaResultado = null;        
     }
 
     int getScore()
@@ -350,19 +356,12 @@ public class Game {
            lapis.drawString("?", 710, 67);
         }
         
-        if (gameOver)
+        if (tela.getStatus() == Status.GAMEOVER)
         {
-           desenhaGameOver(lapis);
+            tela.desenhaGameOver(lapis);
         }
         
         score(lapis);
-    }
-    
-    public void desenhaGameOver(Graphics2D lapis)
-    {
-       lapis.setColor(Color.WHITE);
-       lapis.setFont(new Font("Pixeled", 1, 50));
-         lapis.drawString("GAME OVER", (Propriedades.COL * 20) / 2, (Propriedades.ROW * Propriedades.PIXELS) / 2);
     }
     
     public void desenhaResultado(Graphics2D lapis, boolean acertou)
@@ -414,18 +413,19 @@ public class Game {
            lapis.setColor(Color.WHITE);
               lapis.drawString(Integer.toString(comida.getNumero()), x + 8, y + 23);             
 
-        } else if (mudarRandom) {             
-             lapis.setColor(Propriedades.FOOD);      
-                 lapis.fillRoundRect(x + 1, y + 1, Propriedades.PIXELS - 2, Propriedades.PIXELS - 2, cantos, cantos);         
+        } else if (mudarRandom) {
+            
+            lapis.setColor(Propriedades.FOOD);      
+                lapis.fillRoundRect(x + 1, y + 1, Propriedades.PIXELS - 2, Propriedades.PIXELS - 2, cantos, cantos);         
 
-                    lapis.setColor(Color.WHITE);
+               lapis.setColor(Color.WHITE);
 
-                    if (comida.getNumero() < 10)
-                    {
-                       lapis.drawString(Integer.toString(comida.getNumero()), x + 8, y + 23);
-                    } else {
-                       lapis.drawString(Integer.toString(comida.getNumero()), x + 1, y + 23);
-                    }
+               if (comida.getNumero() < 10)
+               {
+                  lapis.drawString(Integer.toString(comida.getNumero()), x + 8, y + 23);
+               } else {
+                  lapis.drawString(Integer.toString(comida.getNumero()), x + 1, y + 23);
+               }         
 
              pintarComidaResultado(lapis);           
 

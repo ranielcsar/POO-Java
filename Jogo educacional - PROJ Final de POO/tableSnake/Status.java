@@ -16,6 +16,5 @@ public enum Status {
    NAO_COMECOU,
    RODANDO,
    PARADO,
-   INSTRUCOES,
-   GAMEOVER     
+   GAMEOVER,
 }

@@ -32,6 +32,9 @@ public class Game {
     private int numero;
     private int resultado;
     
+    private int erros = 0,
+                acertos = 0;
+    
     private int x, y;
     private int cantos = Propriedades.PIXELS / 3;
     
@@ -277,9 +280,13 @@ public class Game {
         {
             aumentarCobra();
             acertou = true;
+            
+            acertos++;
         } else {
             diminuirCobra();
             acertou = false;
+            
+            erros++;
         }
         
         drawResultado = true;
@@ -303,9 +310,13 @@ public class Game {
         cobra = new Snake();               
         score = 0;
         contadora = 0;
+        erros = 0;
+        acertos = 0;
         cobra.setSize(2);
         math.hasNumber = false;
         math.temResultado = false;
+        movimento = Direction.BAIXO;
+        mudarRandom = false;
         drawResultado = false;
         gameOver = false;               
     }
@@ -362,13 +373,9 @@ public class Game {
            lapis.drawString("?", 710, 67);
         }
         
-        if (tela.getStatus() == Status.GAMEOVER)
-        {
-            tela.desenhaGameOver(lapis);
-        }
-        
         score(lapis);
     }
+   
     
     public void desenhaResultado(Graphics2D lapis, boolean acertou)
     {       
@@ -474,5 +481,15 @@ public class Game {
         lapis.setColor(Propriedades.SCORE);
         lapis.setFont(new Font("Verdana", 1, 25));
         lapis.drawString("Pontuação: " + getScore(), 20, 40);
+    }
+    
+    public int getErros()
+    {
+        return this.erros;
+    }
+    
+    public int getAcertos()
+    {
+        return this.acertos;
     }
 }

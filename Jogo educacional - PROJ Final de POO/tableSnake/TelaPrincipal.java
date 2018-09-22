@@ -27,7 +27,6 @@ public class TelaPrincipal extends JFrame {
     
     private Engine motor;
     private final Telas telas;
-    private boolean travar = false;
     
     TelaPrincipal()
     {
@@ -105,9 +104,7 @@ public class TelaPrincipal extends JFrame {
                     telas.desenhaPausa(lapis);
                     break;
                 case GAMEOVER:
-                    telas.desenhaGameOver(lapis);
-                    motor.jogo.resetar();
-                    travar = true;
+                    telas.desenhaGameOver(lapis, motor.jogo.getAcertos(), motor.jogo.getErros());
                 default:
                     break;
             }

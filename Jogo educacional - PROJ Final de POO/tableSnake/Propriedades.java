@@ -13,6 +13,7 @@ package tableSnake;
 
 
 import java.awt.Color;
+import java.awt.GradientPaint;
 
 public class Propriedades {
     
@@ -26,7 +27,7 @@ public class Propriedades {
     static final int LARGURA = COL * PIXELS;
     static final int ALTURA = ROW * PIXELS;
 
-    static Color BG = Color.decode("#371f3d"); 
+    static Color BG = Color.decode("#38203e"); 
     static Color FOOD = Color.decode("#e16e81");
     static Color SNAKE = Color.decode("#16f1b4");
     static Color HEAD = Color.decode("#e5ef9f");

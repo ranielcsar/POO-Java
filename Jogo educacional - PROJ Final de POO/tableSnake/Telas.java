@@ -62,8 +62,9 @@ public class Telas {
          lapis.drawString("Aperte ENTER para começar...", 450, 550);
    }
    
-   public void desenhaGameOver(Graphics lapis, int acertos, int erros)
+   public void desenhaGameOver(Graphics lapis, int acertos, int erros, int score)
    {
+       
       lapis.setColor(Color.WHITE);
       lapis.setFont(new Font("Pixeled", 1, 50));
         lapis.drawString("GAME OVER", (Propriedades.LARGURA / 3) - 9, Propriedades.ALTURA / 2);
@@ -72,10 +73,11 @@ public class Telas {
       lapis.setFont(new Font("Verdana", 1, 17));
         lapis.drawString("APERTE ENTER PARA COMEÇAR NOVAMENTE!", (Propriedades.LARGURA / 3) + 5, 330);
         
-      lapis.setColor(Color.WHITE);
+      lapis.setColor(Color.decode("#b3a1b6"));
       lapis.setFont(new Font("Verdana", 1, 15));
-        lapis.drawString("Total de acertos: " + acertos, Propriedades.LARGURA / 3 + 5, 380);
-        lapis.drawString("Total de erros: " + erros, (Propriedades.LARGURA / 2) + 80, 380);
+        lapis.drawString("Total de acertos: " + acertos, Propriedades.LARGURA / 3 + 10, 380);
+        lapis.drawString("Total de erros: " + erros, (Propriedades.LARGURA / 2) + 90, 380);
+        lapis.drawString("Pontuação final: " + score, (Propriedades.LARGURA / 2) - 50, 440);
    }   
    
    public void setStatus(Status novoStatus)
@@ -86,6 +88,5 @@ public class Telas {
    public Status getStatus()
    {
        return this.status;
-   }
-   
+   }   
 }

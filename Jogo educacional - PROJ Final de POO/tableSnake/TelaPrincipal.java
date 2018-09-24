@@ -104,7 +104,7 @@ public class TelaPrincipal extends JFrame {
                     telas.desenhaPausa(lapis);
                     break;
                 case GAMEOVER:
-                    telas.desenhaGameOver(lapis, motor.jogo.getAcertos(), motor.jogo.getErros());
+                    telas.desenhaGameOver(lapis, motor.jogo.getAcertos(), motor.jogo.getErros(), motor.jogo.getScore());
                 default:
                     break;
             }

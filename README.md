@@ -8,6 +8,6 @@
 
 * [Requisitos de software](https://github.com/ranielcsar/POO-Java/blob/master/Arquivos/Arquivos%20MD/Requisitos.md)
 
-* [Collections - List e ArrayList](https://github.com/ranielcsar/POO-Java/blob/master/Arquivos/Arquivos%20MD/Collections/ArrayList.md "uma lista praticamente infinita")
+* [Collections - List e ArrayList](https://github.com/ranielcsar/POO-Java/blob/master/Arquivos/Arquivos%20MD/ArrayList.md "uma lista praticamente infinita")
 
 * [Collections - Iterator](https://github.com/ranielcsar/POO-Java/blob/master/Arquivos/Arquivos%20MD/Iterator.md "vamo socializar um pouco")
